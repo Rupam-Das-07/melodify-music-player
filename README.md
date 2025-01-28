@@ -15,7 +15,7 @@ Melodify is a modern music streaming application built with **React** for the fr
 ## 🚀 Technologies Used
 ### **Frontend (React - `music-player` folder)**
 - React.js (Vite or CRA)
-- Tailwind CSS / Material UI
+- React Icons
 - React Router
 - Redux (if used for state management)
 
@@ -40,11 +40,10 @@ Create a `.env` file with your API keys and other secrets:
 ```env
 PORT=5000
 YOUTUBE_API_KEY=your_youtube_api_key
-MONGO_URI=your_mongodb_connection_string (if applicable)
 ```
 Start the backend server:
 ```bash
-npm start
+node server.js
 ```
 
 ### **Frontend Setup**
