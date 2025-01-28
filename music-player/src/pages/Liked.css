@@ -1,0 +1,29 @@
+.liked {
+  padding: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.no-songs-message {
+  text-align: center;
+  padding: 32px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+.song-count {
+  font-size: 14px;
+  color: var(--text-secondary);
+}

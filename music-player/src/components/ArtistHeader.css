@@ -1,0 +1,44 @@
+.artist-header {
+  margin: -24px -24px 24px -24px;
+}
+
+.artist-banner {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.artist-info {
+  max-width: 800px;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.artist-info h1 {
+  font-size: 48px;
+  margin: 0 0 8px 0;
+}
+
+.monthly-listeners {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}

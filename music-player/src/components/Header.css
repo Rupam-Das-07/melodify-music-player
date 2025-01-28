@@ -1,0 +1,349 @@
+.header {
+  background-color: var(--background-base);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: 100;
+  height: 64px;
+}
+
+.header-left {
+  position: absolute;
+  left: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease;
+}
+
+.app-logo:hover {
+  color: var(--accent-color-hover);
+}
+
+.header-center {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-container {
+  width: 100%;
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--background-secondary);
+  border-radius: 500px;
+  padding: 6px 16px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.search-bar:focus-within {
+  background: var(--background-tertiary);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.search-bar input {
+  font-size: 14px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  outline: none;
+  height: 24px;
+  line-height: 24px;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary);
+}
+
+.header-right {
+  position: absolute;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--background-highlight);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--background-base);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  border: 1px solid var(--border-color);
+  padding: 8px 0;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: var(--background-highlight);
+}
+
+.search-result-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.song-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-message {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--background-base);
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: var(--text-secondary);
+}
+
+.search-message.error {
+  color: #e91429;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px;
+  }
+
+  .header-left {
+    left: 16px;
+  }
+
+  .header-right {
+    right: 16px;
+  }
+
+  .header-center {
+    max-width: 300px;
+  }
+
+  .app-logo {
+    font-size: 1.25rem;
+  }
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.auth-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 32px;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-width: 100px;
+  height: 36px;
+}
+
+.auth-button:not(.signup) {
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.auth-button:not(.signup):hover {
+  border-color: var(--text-primary);
+  transform: scale(1.02);
+}
+
+.auth-button.signup {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.auth-button.signup:hover {
+  background-color: var(--primary-color-hover);
+  transform: scale(1.02);
+}
+
+.top-2024-btn {
+  background: linear-gradient(45deg, #1db954, #1ed760);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-2024-btn:hover {
+  transform: scale(1.02);
+  background: linear-gradient(45deg, #1ed760, #1db954);
+}
+
+.search-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #1db954;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.search-error {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.error-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.error-message {
+  font-size: 14px;
+  color: #ff4444;
+}
+
+.search-no-results {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.search-loading,
+.search-error,
+.search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 24px;
+  }
+
+  .header-center {
+    flex: 1.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-center {
+    max-width: none;
+  }
+
+  .search-container {
+    max-width: none;
+  }
+}

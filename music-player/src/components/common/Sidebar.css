@@ -1,0 +1,248 @@
+.sidebar {
+  width: var(--sidebar-width, 240px);
+  height: 100vh;
+  background-color: var(--background-base);
+  border-right: 1px solid var(--border-color);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.app-logo {
+  padding: 0 24px 24px;
+  margin-bottom: 8px;
+}
+
+.app-logo h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  color: var(--text-subdued);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item:hover {
+  color: coral;
+  background: var(--background-highlight);
+  transform: translateX(4px);
+}
+
+.nav-item.active {
+  color: coral;
+  background: var(--background-highlight);
+}
+
+/* Hover indicator line */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: coral;
+  border-radius: 0 4px 4px 0;
+  transition: height 0.2s ease;
+}
+
+.nav-item:hover::after {
+  height: 70%;
+}
+
+.nav-item.active::after {
+  height: 70%;
+}
+
+/* Icon hover effect */
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: currentColor;
+}
+
+.nav-item:hover svg {
+  transform: scale(1.1);
+  color: coral;
+}
+
+.nav-item.active svg {
+  color: coral;
+}
+
+/* Text hover effect */
+.nav-item span {
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover span {
+  transform: translateX(4px);
+}
+
+.playlists-section {
+  margin-top: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.playlist-header {
+  padding: 8px 24px;
+  margin-bottom: 8px;
+}
+
+.playlist-header span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-subdued);
+  letter-spacing: 0.1em;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: var(--text-subdued);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.playlist-item:hover {
+  color: coral;
+  background: var(--background-highlight);
+  transform: translateX(4px);
+}
+
+.playlist-item.active {
+  color: coral;
+  background: var(--background-highlight);
+}
+
+.add-playlist-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  margin: 8px;
+  background: coral;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.add-playlist-btn:hover {
+  background: #ff99cc;
+  transform: translateY(-2px);
+}
+
+.add-playlist-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.add-playlist-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+.other-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.section-header {
+  padding: 8px 24px;
+  margin-bottom: 8px;
+}
+
+.section-header span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-subdued);
+  letter-spacing: 0.1em;
+}
+
+.other-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 8px;
+}
+
+.other-menu .nav-item {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 16px 0;
+  }
+
+  .app-logo {
+    padding: 0 16px 16px;
+  }
+
+  .nav-menu,
+  .playlist-list,
+  .other-menu {
+    padding: 0 4px;
+  }
+
+  .playlist-header,
+  .section-header {
+    padding: 8px 16px;
+  }
+
+  .add-playlist-btn {
+    margin: 0 4px;
+  }
+}
